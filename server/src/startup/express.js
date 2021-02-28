@@ -16,20 +16,9 @@ import config from 'config'
 //Central Exception Handler as middleware
 import error from "../middlewares/errorResponseHandler.js";
 
-//import Db from "./db.js";
-
 const initApp = function () {
   const appConfig = new AppConfig(config,mode).getConfig();
   
- // const dbCheck = new Db(appConfig.database)
-  
-  //check database connection
-  // dbCheck.healthCheck().then(r => {
-  //   console.log("Database health check status is done successfully.")
-  // }).catch( error => {
-  //   console.log("ERROR!: Cannot connect to DATABASE! => " + error.message)
-  // });
-
   // Init express config
   let app = express();
   //Express advance config

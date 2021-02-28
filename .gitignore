@@ -116,3 +116,5 @@ typings/
 .dynamodb/
 
 # End of https://www.gitignore.io/api/node,macos
+.idea/.idea.NodeJsES6.dir/.idea/.gitignore
+.idea/
