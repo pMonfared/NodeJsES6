@@ -66,7 +66,7 @@ Or if you want without watching you can run on your terminal `npm-run-all build 
 Run on your terminal `npm test-unit`.
 
 #### -Integration-Tests:
-Run on your terminal `npm test-unit`.
+Run on your terminal `npm test-integration`.
 
 Also, You can see coverage of test in `coverage` folder of root project
 
