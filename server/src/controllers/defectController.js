@@ -4,17 +4,22 @@
 class DefectController {
     //must inject DefectService to constructor
     constructor(service) {
-      this.service = service;
+      //private props begin
+      this._service = service;
+      //private props end
+      
+      //public props begin
       this.getAllAsync = this.getAllAsync.bind(this);
       this.getInfoAsync = this.getInfoAsync.bind(this);
       this.getStatusAsync = this.getStatusAsync.bind(this);
       this.insertInfoAsync = this.insertInfoAsync.bind(this);
       this.updateStatusAsync = this.updateStatusAsync.bind(this);
+      //public props end
     }
   
     async getAllAsync(req, res, next) {
         try {
-            return res.status(200).send(await this.service.getAllAsync());
+            return res.status(200).send(await this._service.getAllAsync());
         } catch (error) {
             //we designed a custom Error extended by javascript Error if fire a handled Error just return it
             //to exceptionHandler middleware by next() to manage as central error handler
@@ -28,7 +33,7 @@ class DefectController {
         try {
             //get routes params from request.params
             const { machineId } = req.params;
-            return res.status(200).send(await this.service.getInfoAsync(machineId));
+            return res.status(200).send(await this._service.getInfoAsync(machineId));
         } catch (error) {
             //we designed a custom Error extended by javascript Error if fire a handled Error just return it
             //to exceptionHandler middleware by next() to manage as central error handler
@@ -45,7 +50,7 @@ class DefectController {
         try {
             //call service function and return data as logic flow designed
             //shoud return 200 for successfull new save data operation with/out data
-            return res.status(200).send(await this.service.getStatusAsync(machineId));
+            return res.status(200).send(await this._service.getStatusAsync(machineId));
         } catch (error) {
             //we designed a custom Error extended by javascript Error if fire a handled Error just return it
             //to exceptionHandler middleware by next() to manage as central error handler
@@ -59,7 +64,7 @@ class DefectController {
         try {
             //call service function and return data as logic flow designed
             //shoud return 201 for successfull new save data operation with/out data
-            return res.status(201).send(await this.service.insertInfoAsync(req.body));
+            return res.status(201).send(await this._service.insertInfoAsync(req.body));
         } catch (error) {
             //we designed a custom Error extended by javascript Error if fire a handled Error just return it
             //to exceptionHandler middleware by next() to manage as central error handler
@@ -73,7 +78,7 @@ class DefectController {
         try {
             //call service function and return data as logic flow designed
             //shoud return 200 for successfull operation with/out data
-            return res.status(200).send(await this.service.updateStatusAsync(req.body));
+            return res.status(200).send(await this._service.updateStatusAsync(req.body));
         } catch (error) {
             //we designed a custom Error extended by javascript Error if fire a handled Error just return it
             //to exceptionHandler middleware by next() to manage as central error handler
