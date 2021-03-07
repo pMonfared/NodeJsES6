@@ -40,6 +40,7 @@ Let's start typing some git commands.
 
 `git checkout master`
 
+`cd ../NodeJsEs6`
 
 ### !== Setup On your Github ==!
 create a repository with a name like `test_deploy`
