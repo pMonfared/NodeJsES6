@@ -39,11 +39,11 @@ Request life cycle;
     ---------> All of Data Logic must be handle by repositories 
     ----------> Repositories use DbManager to do transaction like CRUD on Database
     
-    Mapping Classes From DomainLayer (Data) to PresentationLayer (View):
-     ---> mapped ViewModel (ApiResponseModel) to DbModel (QueryResultModel)
-   
-    Mapping Classes From PresentationLayer (View) to DomainLayer (Data):
+    Mapping Classes From DomainLayer (Data/Model) to PresentationLayer (View):
      ---> mapped DbModel (QueryResultModel) to ViewModel (ApiResponseModel)
+   
+    Mapping Classes From PresentationLayer (View) to DomainLayer (Data/Model):
+     ---> mapped ViewModel (ApiRequestModel) to DbModel (QueryParamModel)
     
     Done!
 ```
@@ -66,7 +66,7 @@ Or if you want without watching you can run on your terminal `npm-run-all build 
 Run on your terminal `npm test-unit`.
 
 #### -Integration-Tests:
-Run on your terminal `npm test-unit`.
+Run on your terminal `npm test-integration`.
 
 Also, You can see coverage of test in `coverage` folder of root project
 
