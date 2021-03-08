@@ -56,3 +56,20 @@ After creating the repository github helpfully tells us how to use our own exist
 
 ### TADAAAA!
 
+
+`git config push.default tracking --global`
+
+`git branch --set-upstream-to production/master master`
+
+`git checkout -b staging`
+
+`git branch --set-upstream-to staging/master staging`
+
+`git checkout master`
+
+=> So we need to make a change to one of the files.
+
+`git commit -a -m "test git tracking"`
+
+`git push`
+
